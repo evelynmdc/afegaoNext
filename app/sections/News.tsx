@@ -72,7 +72,7 @@ export async function News({ id, title }: TAppProps) {
             spacing={{ xs: 1, md: 2 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {Array.from(newsImageActive).map((item: INews, index) => {
+            {newsImageActive.map((item: INews, index: number) => {
               let value = item.txtNews;
 
               if (item.txtNews.includes(".")) {
