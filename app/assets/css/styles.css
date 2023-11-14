@@ -1,0 +1,76 @@
+.container {
+  width: 70vw;
+}
+
+.footer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.footer:last-child {
+  text-align: center;
+  align-items: flex-end;
+  color: #f6e3c6;
+}
+
+.footer:last-child form {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 80%;
+}
+
+.textField {
+  background-color: #f6e3c6;
+  border-radius: 3px;
+  width: 100%;
+  margin: 0 0 4px 0;
+  height: 35px;
+  border: 0;
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.footer-submit-button {
+  padding: 5px 10px;
+  color: #f6e3c6;
+  border-radius: 3px;
+}
+
+.footer:last-child,
+.footer-span {
+  color: #f6e3c6;
+  display: "flex";
+}
+
+.footer-info {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.footer-span {
+  padding-left: 10px;
+}
+
+textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 16px;
+}
+textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 16px;
+}
+textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 16px;
+}
+textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 16px;
+}
