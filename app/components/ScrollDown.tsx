@@ -1,6 +1,6 @@
 "use client";
 
-export function ScrollDown({ children }) {
+export function ScrollDown({ children }: any) {
   return (
     <div
       style={{
