@@ -8,8 +8,6 @@ import { Nav } from "./sections/Nav";
 import { News } from "./sections/News";
 import { Partners } from "./sections/Partners";
 
-export const homePage = "http://localhost:3000";
-
 export default function Home() {
   let menuItems = [
     { name: "História", id: "history" },

@@ -1,7 +1,6 @@
 "use client";
 
 import logo from "../images/download.jpg";
-import { homePage } from "../page";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -64,7 +63,7 @@ export const Nav = ({ menuItems }: TMenuItems) => {
             width: "5vh",
           }}
         >
-          <a href={homePage}>
+          <a href={`../`}>
             <Image alt="logo" src={logo.src} width={120} height={120} />
           </a>
         </div>
