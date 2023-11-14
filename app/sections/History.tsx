@@ -19,7 +19,9 @@ interface IDogHistory {
 }
 
 export async function History({ id, title }: TAppProps) {
-  let dogHistory = await fetchJson(`http://localhost:3001/dogHistory`);
+  let dogHistory = await fetchJson(
+    `https://afegao-backend.vercel.app/dogHistory`
+  );
   let dogHistoryActive = dogHistory.filter(
     (item: IDogHistory) => item.indAtivo === true
   );
@@ -88,7 +90,7 @@ export async function History({ id, title }: TAppProps) {
                     <img
                       alt="dog"
                       className="d-block w-100"
-                      src={`http://localhost:3001/files/${element.pthPhoto}`}
+                      src={`https://afegao-backend.vercel.app/files/${element.pthPhoto}`}
                       style={{ height: "400px" }}
                     />
                   </div>

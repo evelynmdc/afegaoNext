@@ -11,7 +11,9 @@ interface IPartner {
 }
 
 export async function Partners({ id, title }: TAppProps) {
-  let partnersImage = await fetchJson(`http://localhost:3001/partners`);
+  let partnersImage = await fetchJson(
+    `https://afegao-backend.vercel.app/partners`
+  );
   let partnersImageActive = partnersImage.filter(
     (item: IPartner) => item.indAtivo === true
   );

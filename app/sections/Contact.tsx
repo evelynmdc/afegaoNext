@@ -21,7 +21,7 @@ import Image from "next/image";
 // }
 
 export async function Contact({ id, title }: TAppProps) {
-  // let contact = await fetchJson(`http://localhost:3001/contact`);
+  // let contact = await fetchJson(`https://afegao-backend.vercel.app/contact`);
   // let contactActive = contact.filter(
   //   (item: IContactActive) => item.indAtivo === true
   // );
