@@ -19,9 +19,7 @@ interface IDogHistory {
 }
 
 export async function History({ id, title }: TAppProps) {
-  let dogHistory = await fetchJson(
-    `https://afegao-backend.vercel.app/dogHistory`
-  );
+  let dogHistory = await fetchJson(`http://localhost:3001/dogHistory`);
   let dogHistoryActive = dogHistory.filter(
     (item: IDogHistory) => item.indAtivo === true
   );
