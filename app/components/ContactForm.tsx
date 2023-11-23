@@ -10,7 +10,7 @@ export function ContactForm() {
   return (
     <form
       method="POST"
-      action={`https://afegao-backend.vercel.app/messages`}
+      action={`https://afegao-backend-i5gce.ondigitalocean.app/messages`}
       onSubmit={() => {
         document.getElementById("messageSent")!.innerText =
           "Agradecemos pela mensagem!";

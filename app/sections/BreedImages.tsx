@@ -16,7 +16,7 @@ interface IBreedImages {
 
 export async function BreedImages({ id, title }: TAppProps) {
   let breedImage = await fetchJson(
-    `https://afegao-backend.vercel.app/breedImages`
+    `https://afegao-backend-i5gce.ondigitalocean.app/breedImages`
   );
   let breedImageActive = breedImage.filter(
     (item: IBreedImages) => item.indAtivo === true

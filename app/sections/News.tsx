@@ -20,7 +20,9 @@ interface INews {
 }
 
 export async function News({ id, title }: TAppProps) {
-  let newsImage = await fetchJson(`https://afegao-backend.vercel.app/news`);
+  let newsImage = await fetchJson(
+    `https://afegao-backend-i5gce.ondigitalocean.app/news`
+  );
   let newsImageActive = newsImage.filter(
     (item: INews) => item.indAtivo === true
   );
