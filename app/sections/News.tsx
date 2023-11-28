@@ -21,7 +21,7 @@ interface INews {
 
 export async function News({ id, title }: TAppProps) {
   let newsImage = await fetchJson(
-    `https://afegao-backend-ti87z.ondigitalocean.app/news`
+    `https://afegao-backend-jqxr4.ondigitalocean.app/news`
   );
   let newsImageActive = newsImage.filter(
     (item: INews) => item.indAtivo === true

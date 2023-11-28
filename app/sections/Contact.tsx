@@ -21,7 +21,7 @@ import Image from "next/image";
 // }
 
 export async function Contact({ id, title }: TAppProps) {
-  // let contact = await fetchJson(`https://afegao-backend-ti87z.ondigitalocean.app/contact`);
+  // let contact = await fetchJson(`https://afegao-backend-jqxr4.ondigitalocean.app/contact`);
   // let contactActive = contact.filter(
   //   (item: IContactActive) => item.indAtivo === true
   // );

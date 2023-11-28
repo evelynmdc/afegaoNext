@@ -20,7 +20,7 @@ interface IDogHistory {
 
 export async function History({ id, title }: TAppProps) {
   let dogHistory = await fetchJson(
-    `https://afegao-backend-ti87z.ondigitalocean.app/dogHistory`
+    `https://afegao-backend-jqxr4.ondigitalocean.app/dogHistory`
   );
   let dogHistoryActive = dogHistory.filter(
     (item: IDogHistory) => item.indAtivo === true
@@ -90,7 +90,7 @@ export async function History({ id, title }: TAppProps) {
                     <img
                       alt="dog"
                       className="d-block w-100"
-                      src={`https://afegao-backend-ti87z.ondigitalocean.app/files/${element.pthPhoto}`}
+                      src={`https://afegao-backend-jqxr4.ondigitalocean.app/files/${element.pthPhoto}`}
                       style={{ height: "400px" }}
                     />
                   </div>

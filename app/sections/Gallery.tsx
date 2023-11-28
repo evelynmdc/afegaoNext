@@ -14,7 +14,7 @@ interface IGallery {
 
 export async function Gallery({ id, title }: TAppProps) {
   let gallery = await fetchJson(
-    `https://afegao-backend-ti87z.ondigitalocean.app/gallery`
+    `https://afegao-backend-jqxr4.ondigitalocean.app/gallery`
   );
   let galleryActive = gallery.filter(
     (item: IGallery) => item.indAtivo === true
