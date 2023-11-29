@@ -131,4 +131,8 @@ textarea:-ms-input-placeholder {
   .footer-submit-button {
     height: 40px;
   }
+
+  .container {
+    width: 98vw;
+  }
 }

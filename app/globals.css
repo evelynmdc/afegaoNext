@@ -10,6 +10,10 @@ html {
   padding: 50px 0;
 }
 
+#nav {
+  height: 5vh;
+}
+
 .sections {
   padding: 30px;
   display: flex;
@@ -100,7 +104,7 @@ html {
   }
 
   nav.active #menu {
-    height: calc(100vh - 45px);
+    height: calc(100vh - 35px);
     visibility: visible;
     overflow-y: auto;
     z-index: 100;
@@ -146,5 +150,9 @@ html {
   #nav.active #hamburger::after {
     transform: rotate(-135deg);
     top: -7px;
+  }
+
+  #nav {
+    height: 8vh;
   }
 }

@@ -36,7 +36,6 @@ export const Nav = ({ menuItems }: TMenuItems) => {
       id="nav"
       style={{
         width: "100%",
-        height: "5vh",
         zIndex: "10",
         color: "#fff",
         overflow: "hidden",
