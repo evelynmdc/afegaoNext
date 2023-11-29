@@ -95,7 +95,6 @@ export async function Gallery({ id, title }: TAppProps) {
             gap={10}
             style={{
               boxSizing: "border-box",
-              padding: "20px",
             }}
             className="imageList-sm"
           >
