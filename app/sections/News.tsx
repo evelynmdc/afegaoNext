@@ -21,7 +21,7 @@ interface INews {
 
 export async function News({ id, title }: TAppProps) {
   let newsImage = await fetchJson(
-    `https://afegao-backend-jqxr4.ondigitalocean.app/news`
+    `https://afegao-backend-yevba.ondigitalocean.app/news`
   );
   let newsImageActive = newsImage.filter(
     (item: INews) => item.indAtivo === true
@@ -29,19 +29,13 @@ export async function News({ id, title }: TAppProps) {
   return (
     <section
       style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
-        width: "100%",
         backgroundColor: "#a1bdd3",
-        alignItems: "center",
-        overflowX: "hidden",
       }}
       id={id}
+      className="sections"
     >
       <div
         style={{
-          padding: 50,
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
@@ -53,7 +47,7 @@ export async function News({ id, title }: TAppProps) {
         <h2
           style={{
             textAlign: "center",
-            marginBottom: "80px",
+            marginBottom: "50px",
             color: "#AE8B32",
           }}
         >
@@ -65,9 +59,9 @@ export async function News({ id, title }: TAppProps) {
             display: "flex",
             justifyContent: "space-around",
             flexWrap: "wrap",
-            width: "50vw",
             margin: "0 auto",
           }}
+          id="newsCards"
         >
           <Grid
             container
@@ -85,7 +79,7 @@ export async function News({ id, title }: TAppProps) {
               return (
                 <Grid
                   item
-                  xs={12}
+                  xs={4}
                   sm={12}
                   md={4}
                   key={index}

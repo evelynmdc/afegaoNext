@@ -12,7 +12,7 @@ interface IPartner {
 
 export async function Partners({ id, title }: TAppProps) {
   let partnersImage = await fetchJson(
-    `https://afegao-backend-jqxr4.ondigitalocean.app/partners`
+    `https://afegao-backend-yevba.ondigitalocean.app/partners`
   );
   let partnersImageActive = partnersImage.filter(
     (item: IPartner) => item.indAtivo === true
@@ -20,19 +20,13 @@ export async function Partners({ id, title }: TAppProps) {
   return (
     <section
       style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
-        width: "100%",
         backgroundColor: "#efd79b",
-        alignItems: "center",
-        overflowX: "hidden",
       }}
       id={id}
+      className="sections"
     >
       <div
         style={{
-          padding: 50,
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",

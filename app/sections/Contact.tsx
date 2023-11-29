@@ -21,7 +21,7 @@ import Image from "next/image";
 // }
 
 export async function Contact({ id, title }: TAppProps) {
-  // let contact = await fetchJson(`https://afegao-backend-jqxr4.ondigitalocean.app/contact`);
+  // let contact = await fetchJson(`https://afegao-backend-yevba.ondigitalocean.app/contact`);
   // let contactActive = contact.filter(
   //   (item: IContactActive) => item.indAtivo === true
   // );
@@ -30,24 +30,11 @@ export async function Contact({ id, title }: TAppProps) {
   return (
     <section
       style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100%",
         backgroundColor: "#B58B4C",
-        alignItems: "center",
-        overflowX: "hidden",
       }}
       id={id}
     >
-      <div
-        style={{
-          padding: "50px 0",
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          width: "50vw",
-        }}
-      >
+      <div id="footer">
         <h2
           style={{
             textAlign: "center",
@@ -64,6 +51,7 @@ export async function Contact({ id, title }: TAppProps) {
             flexWrap: "wrap",
             height: "fit-content",
           }}
+          className="footer-main"
         >
           <div className="footer">
             <div className="footer-info">
@@ -140,8 +128,9 @@ export async function Contact({ id, title }: TAppProps) {
               </span>
             </div>
           </div>
+
           <div className="footer">
-            <div style={{ marginBottom: "20px" }}>
+            <div style={{ margin: "20px auto" }}>
               <h5
                 style={{
                   marginBottom: 15,

@@ -10,7 +10,7 @@ export function ContactForm() {
   return (
     <form
       method="POST"
-      action={`https://afegao-backend-jqxr4.ondigitalocean.app/messages`}
+      action={`https://afegao-backend-yevba.ondigitalocean.app/messages`}
       onSubmit={() => {
         document.getElementById("messageSent")!.innerText =
           "Agradecemos pela mensagem!";
@@ -25,7 +25,6 @@ export function ContactForm() {
         id="nmeMessage"
         className="textField"
         placeholder="Nome"
-        // variant="outlined"
         value={nameValue}
         onChange={(e) => setNameValue(e.target.value)}
       />
@@ -35,7 +34,6 @@ export function ContactForm() {
         id="emlMessage"
         className="textField"
         placeholder="Email"
-        // variant="outlined"
         value={emailValue}
         onChange={(e) => setEmailValue(e.target.value)}
       />
@@ -45,7 +43,6 @@ export function ContactForm() {
         id="phnMessage"
         className="textField"
         placeholder="Telefone"
-        // variant="outlined"
         value={phoneValue}
         onChange={(e) => setPhoneValue(e.target.value)}
       />
@@ -63,20 +60,13 @@ export function ContactForm() {
         value={textValue}
         onChange={(e) => setTextValue(e.target.value)}
       />
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div className="footer-button">
         <span id="messageSent" style={{ color: "#fff" }}></span>
         <input
           style={{
             backgroundColor: "rgba(0,0,0,0.54)",
             border: 0,
-            width: "30%",
+            width: "100%",
           }}
           type="submit"
           className="footer-submit-button"

@@ -14,7 +14,7 @@ interface IGallery {
 
 export async function Gallery({ id, title }: TAppProps) {
   let gallery = await fetchJson(
-    `https://afegao-backend-jqxr4.ondigitalocean.app/gallery`
+    `https://afegao-backend-yevba.ondigitalocean.app/gallery`
   );
   let galleryActive = gallery.filter(
     (item: IGallery) => item.indAtivo === true
@@ -26,18 +26,13 @@ export async function Gallery({ id, title }: TAppProps) {
   return (
     <section
       style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
-        width: "100%",
         backgroundColor: "#efd79b",
-        alignItems: "center",
       }}
       id={id}
+      className="sections"
     >
       <div
         style={{
-          padding: 50,
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
@@ -66,6 +61,7 @@ export async function Gallery({ id, title }: TAppProps) {
             style={{
               boxSizing: "border-box",
             }}
+            className="imageList-lg"
           >
             {galleryActive.map((item: IGallery) => {
               return (
@@ -92,6 +88,37 @@ export async function Gallery({ id, title }: TAppProps) {
             onClose={() => setOpen(false)}
             src={src}
           /> */}
+
+          <ImageList
+            variant="masonry"
+            cols={1}
+            gap={10}
+            style={{
+              boxSizing: "border-box",
+              padding: "20px",
+            }}
+            className="imageList-sm"
+          >
+            {galleryActive.map((item: IGallery) => {
+              return (
+                <ImageListItem
+                  key={item.pthPhoto}
+                  style={{ cursor: "pointer" }}
+                  // onClick={() => {
+                  //   setOpen(true);
+                  //   setSrc(item.image.src);
+                  // }}
+                >
+                  <img
+                    srcSet={`${item.image.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.image.src}?w=248&fit=crop&auto=format`}
+                    alt="dog"
+                    loading="lazy"
+                  />
+                </ImageListItem>
+              );
+            })}
+          </ImageList>
         </div>
       </div>
     </section>

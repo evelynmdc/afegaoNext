@@ -20,7 +20,7 @@ interface IDogHistory {
 
 export async function History({ id, title }: TAppProps) {
   let dogHistory = await fetchJson(
-    `https://afegao-backend-jqxr4.ondigitalocean.app/dogHistory`
+    `https://afegao-backend-yevba.ondigitalocean.app/dogHistory`
   );
   let dogHistoryActive = dogHistory.filter(
     (item: IDogHistory) => item.indAtivo === true
@@ -28,22 +28,18 @@ export async function History({ id, title }: TAppProps) {
   return (
     <div
       style={{
-        padding: "30px",
-        width: " 100%",
         backgroundColor: "#efd79b",
-        display: "flex",
-        alignItems: "center",
         zIndex: 10,
         borderTop: "1px solid #c4a75e",
         boxShadow: "0 -1px 3px #c4a75e",
       }}
       id={id}
+      className="sections"
     >
       <div
         className="container"
         style={{
           display: "block",
-          padding: 30,
           margin: "0 auto",
         }}
       >
@@ -65,6 +61,7 @@ export async function History({ id, title }: TAppProps) {
             height: "100%",
             width: "100%",
           }}
+          id="carousel-lg"
         >
           {dogHistoryActive.map((element: IDogHistory) => {
             return (
@@ -90,7 +87,7 @@ export async function History({ id, title }: TAppProps) {
                     <img
                       alt="dog"
                       className="d-block w-100"
-                      src={`https://afegao-backend-jqxr4.ondigitalocean.app/files/${element.pthPhoto}`}
+                      src={`https://afegao-backend-yevba.ondigitalocean.app/files/${element.pthPhoto}`}
                       style={{ height: "400px" }}
                     />
                   </div>
@@ -116,6 +113,78 @@ export async function History({ id, title }: TAppProps) {
                         position: "absolute",
                         left: "30vw",
                         color: "blue",
+                      }}
+                    >
+                      {element.txtHistory}
+                    </span>
+                  </div>
+                </div>
+              </CarouselItem>
+            );
+          })}
+        </Carousel>
+
+        <Carousel
+          fade
+          style={{
+            backgroundColor: "lightgray",
+            borderRadius: "4px",
+            height: "100%",
+            width: "100%",
+          }}
+          id="carousel-sm"
+        >
+          {dogHistoryActive.map((element: IDogHistory) => {
+            return (
+              <CarouselItem
+                interval={5000}
+                key={element.pthPhoto}
+                style={{ overflowY: "hidden", height: "fit-content" }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    height: "100%",
+                    width: "100%",
+                    alignItems: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  >
+                    <img
+                      alt="dog"
+                      className="d-block w-100"
+                      src={`https://afegao-backend-yevba.ondigitalocean.app/files/${element.pthPhoto}`}
+                      style={{ height: "400px" }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      padding: "0",
+                      display: "flex",
+                      alignItems: "center",
+                      position: "absolute",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: "10px",
+                        height: "100%",
+                        width: "100%",
+                        textAlign: "center",
+                        backgroundColor: "rgba(113,152,250,0.3)",
+                        left: "30vw",
+                        color: "white",
+                        margin: "0 auto",
                       }}
                     >
                       {element.txtHistory}

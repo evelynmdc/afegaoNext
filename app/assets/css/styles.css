@@ -2,6 +2,14 @@
   width: 70vw;
 }
 
+#footer {
+  padding: 50px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
 .footer {
   width: 50%;
   display: flex;
@@ -52,6 +60,13 @@
   padding-bottom: 15px;
 }
 
+.footer-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .footer-span {
   padding-left: 10px;
 }
@@ -73,4 +88,47 @@ textarea::-moz-placeholder {
 textarea:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.35);
   font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  #contact {
+    padding-bottom: 60px;
+  }
+
+  #footer {
+    width: 90vw;
+  }
+
+  .footer-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer {
+    width: 100%;
+  }
+
+  .footer:last-child {
+    margin-top: 20px;
+  }
+
+  .footer:first-child {
+    padding-left: 50px;
+  }
+
+  .footer:last-child form {
+    align-items: center;
+    width: 100%;
+  }
+
+  .textField {
+    margin-bottom: 7px;
+    height: 40px;
+  }
+
+  .footer-submit-button {
+    height: 40px;
+  }
 }

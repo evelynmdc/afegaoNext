@@ -16,7 +16,7 @@ interface IBreedImages {
 
 export async function BreedImages({ id, title }: TAppProps) {
   let breedImage = await fetchJson(
-    `https://afegao-backend-jqxr4.ondigitalocean.app/breedImages`
+    `https://afegao-backend-yevba.ondigitalocean.app/breedImages`
   );
   let breedImageActive = breedImage.filter(
     (item: IBreedImages) => item.indAtivo === true
@@ -32,18 +32,13 @@ export async function BreedImages({ id, title }: TAppProps) {
   return (
     <section
       style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
-        width: "100%",
         backgroundColor: "#a1bdd3",
-        alignItems: "center",
       }}
       id={id}
+      className="sections"
     >
       <div
         style={{
-          padding: 50,
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
@@ -72,6 +67,7 @@ export async function BreedImages({ id, title }: TAppProps) {
             style={{
               boxSizing: "border-box",
             }}
+            className="imageList-lg"
           >
             {breedImageActive.map((item: IBreedImages) => {
               return (
@@ -94,6 +90,37 @@ export async function BreedImages({ id, title }: TAppProps) {
             })}
           </ImageList>
           {/* <BreedImagesDialog open={open} onClose={handleClose} src={src} /> */}
+
+          <ImageList
+            variant="masonry"
+            cols={1}
+            gap={10}
+            style={{
+              boxSizing: "border-box",
+              padding: "20px",
+            }}
+            className="imageList-sm"
+          >
+            {breedImageActive.map((item: IBreedImages) => {
+              return (
+                <ImageListItem
+                  key={item.pthPhoto}
+                  style={{ cursor: "pointer" }}
+                  // onClick={() => {
+                  //   setOpen(open);
+                  //   setSrc(src);
+                  // }}
+                >
+                  <img
+                    srcSet={`${item.image.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.image.src}?w=248&fit=crop&auto=format`}
+                    alt="dog"
+                    loading="lazy"
+                  />
+                </ImageListItem>
+              );
+            })}
+          </ImageList>
         </div>
       </div>
     </section>

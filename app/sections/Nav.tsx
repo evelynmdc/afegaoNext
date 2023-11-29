@@ -10,9 +10,9 @@ type TMenuItems = { menuItems: Array<TMenuItem> };
 function toggleMenu(event: PointerEvent) {
   const button = event.currentTarget;
   const nav = document.getElementById("nav");
+  const menu = document.getElementById("menu");
   if (button instanceof HTMLElement && nav) {
     const active = nav.classList.contains("active");
-    console.log(active);
     if (active) {
       nav.classList.remove("active");
       button.setAttribute("aria-expanded", "false");
@@ -55,8 +55,9 @@ export const Nav = ({ menuItems }: TMenuItems) => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          alignItems: "center",
+          width: "70%",
         }}
-        className="container"
       >
         <div
           style={{
@@ -76,17 +77,8 @@ export const Nav = ({ menuItems }: TMenuItems) => {
         >
           <span id="hamburger"></span>
         </button>
-        <ul
-          id="menu"
-          style={{
-            listStyle: "none",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            height: "100%",
-            margin: "0",
-          }}
-        >
+
+        <ul id="menu" className="lista">
           {menuItems.map((item: TMenuItem) => {
             return (
               <li
@@ -102,7 +94,6 @@ export const Nav = ({ menuItems }: TMenuItems) => {
                     display: "inline-block",
                     padding: "1.5rem",
                     fontSize: "18px",
-                    fontFamily: "roboto",
                     letterSpacing: "1px",
                     textDecoration: "none",
                     color: "#2f5579",
